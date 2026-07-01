@@ -13,3 +13,14 @@ class CustomerListCreateView(generics.ListCreateAPIView):
     """
     queryset= Customer.objects.all()
     serializer_class = CustomerSerializer
+    
+    
+class CustomerDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    GET: Retrive specific customer
+    PUT/PATCH: Update a specific customer
+    DELETE: Delete a specific customer
+    """
+    queryset= Customer.objects.all()
+    serializer_class = CustomerSerializer
+    lookup_field ='id'
